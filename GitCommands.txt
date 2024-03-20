@@ -615,3 +615,108 @@ Fast-forward
 
 A7---------------------------------- Creating and merging pul requests...
 
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.82 KiB | 1.82 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/uruc-developer/git-lernen.git
+   3a52400..3b2604b  main -> main
+
+
+$ git branch feature/AddGitHub
+
+$ git checkout feature/AddGitHub
+Switched to branch 'feature/AddGitHub'
+
+   
+$ git commit -m "GitHub added to readme"
+[feature/AddGitHub f54ef84] GitHub added to readme
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+$ git push origin feature/AddGitHub
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 335 bytes | 335.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'feature/AddGitHub' on GitHub by visiting:
+remote:      https://github.com/uruc-developer/git-lernen/pull/new/feature/AddGitHub
+remote:
+To https://github.com/uruc-developer/git-lernen.git
+ * [new branch]      feature/AddGitHub -> feature/AddGitHub
+
+$ git branch
+* feature/AddGitHub
+  main
+
+$ git branch
+  feature/AddGitHub
+* main
+
+$ git merge feature/AddGitHub
+Updating 3b2604b..f54ef84
+Fast-forward
+ readme.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+$ git push origin main
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/uruc-developer/git-lernen.git
+   3b2604b..f54ef84  main -> main
+   
+$ git branch -d feature/AddGitHub
+Deleted branch feature/AddGitHub (was f54ef84).
+
+
+Forking a repository on GitHub
+   
+sudevde:main
+
+$ git branch sudevde_main
+
+$ git pull https://github.com/sudevde/git-lernen.git main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 1.01 KiB | 148.00 KiB/s, done.
+From https://github.com/sudevde/git-lernen
+ * branch            main       -> FETCH_HEAD
+Updating f54ef84..e13e692
+Fast-forward
+ readme.md  | 6 ++++++
+ readme.txt | 6 ------
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+ create mode 100644 readme.md
+ delete mode 100644 readme.txt
+ 
+ $ git checkout main
+ 
+$ git merge sudevde_main
+Updating f54ef84..e13e692
+Fast-forward
+ readme.md  | 6 ++++++
+ readme.txt | 6 ------
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+ create mode 100644 readme.md
+ delete mode 100644 readme.txt
+
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.03 KiB | 1.03 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/uruc-developer/git-lernen.git
+   f54ef84..e13e692  main -> main
+
+   

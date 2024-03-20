@@ -431,3 +431,187 @@ In the next section, you will learn how to create so-called pull requests. But b
 
 ----
 
+create a new repository on the command line
+
+echo "# git-lernen" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/uruc-developer/git-lernen.git
+git push -u origin main
+
+…or push an existing repository from the command line
+
+git remote add origin https://github.com/uruc-developer/git-lernen.git
+git branch -M main
+git push -u origin main
+
+https://github.com/uruc-developer/git-lernen.git
+
+$ git remote add origin https://github.com/uruc-developer/git-lernen.git
+
+$ git remote -v
+origin  https://github.com/uruc-developer/git-lernen.git (fetch)
+origin  https://github.com/uruc-developer/git-lernen.git (push)
+
+$ git remote
+origin
+
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/uruc-developer/git-lernen.git
+  Push  URL: https://github.com/uruc-developer/git-lernen.git
+  HEAD branch: (unknown)
+
+$ git branch -M main
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+$ git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 36, done.
+Counting objects: 100% (36/36), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (36/36), 6.36 KiB | 1.59 MiB/s, done.
+Total 36 (delta 13), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (13/13), done.
+To https://github.com/uruc-developer/git-lernen.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/uruc-developer/git-lernen.git
+  Push  URL: https://github.com/uruc-developer/git-lernen.git
+  HEAD branch: main
+  Remote branch:
+    main tracked
+  Local branch configured for 'git pull':
+    main merges with remote main
+  Local ref configured for 'git push':
+    main pushes to main (up to date)
+	
+	
+	
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 353 bytes | 353.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/uruc-developer/git-lernen.git
+   9c47007..f59f16f  main -> main	
+	
+$ git clone https://github.com/uruc-developer/git-lernen.git .
+Cloning into '.'...
+remote: Enumerating objects: 39, done.
+remote: Counting objects: 100% (39/39), done.
+remote: Compressing objects: 100% (24/24), done.
+remote: Total 39 (delta 14), reused 39 (delta 14), pack-reused 0
+Receiving objects: 100% (39/39), 6.65 KiB | 2.22 MiB/s, done.
+Resolving deltas: 100% (14/14), done.
+
+$ explorer .
+
+Cloned
+$ git log --oneline
+6430776 (HEAD -> main, origin/main, origin/HEAD) Website added to readme
+f59f16f Readme title changed
+9c47007 Pushing to remote repository start
+fc7c9a1 Merge branch feature/middlename
+a15c267 Middlename added, branch:feature/middlename
+19e04a9 Lastname added, branch:feature/lastname
+30c95ea Handle merge conflicts start..
+dbdee21 Twitter handle added
+5b15f53 Abschnitt 5 start.
+d084cf0 .gitignore file added
+02ab4ea git history.. command
+1a33eea Autor added to readme
+dfb342d readme file created
+
+$ git log --oneline
+f59f16f (HEAD -> main, origin/main) Readme title changed
+9c47007 Pushing to remote repository start
+fc7c9a1 Merge branch feature/middlename
+a15c267 Middlename added, branch:feature/middlename
+19e04a9 Lastname added, branch:feature/lastname
+30c95ea Handle merge conflicts start..
+dbdee21 Twitter handle added
+5b15f53 Abschnitt 5 start.
+d084cf0 .gitignore file added
+02ab4ea git history.. command
+1a33eea Autor added to readme
+dfb342d readme file created	
+
+$ git pull origin main
+From https://github.com/uruc-developer/git-lernen
+ * branch            main       -> FETCH_HEAD
+Updating f59f16f..6430776
+Fast-forward
+ readme.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ 
+ 
+git pull = git fetch + git merge
+
+$ git commit -m "Https added in to readme"
+[main 3a52400] Https added in to readme
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ 
+
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 300 bytes | 300.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/uruc-developer/git-lernen.git
+   6430776..3a52400  main -> main
+
+
+
+$ git fetch origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), 280 bytes | 40.00 KiB/s, done.
+From https://github.com/uruc-developer/git-lernen
+ * branch            main       -> FETCH_HEAD
+   6430776..3a52400  main       -> origin/main
+   
+   
+$ git status
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean   
+
+
+$ git branch
+* main
+
+$ git branch -a
+* main
+  remotes/origin/main
+  
+  
+  
+  
+$ git merge origin/main
+Updating 6430776..3a52400
+Fast-forward
+ readme.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+A7---------------------------------- Creating and merging pul requests...
+

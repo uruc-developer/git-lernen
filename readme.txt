@@ -1,5 +1,4 @@
 Welcome to git-lernen Project
 
-Author: uruc-developer lastname
-
+Author: uruc-developer middlename lastname
 Twitter: 

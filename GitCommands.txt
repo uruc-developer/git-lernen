@@ -301,4 +301,133 @@ $ git branch
 
 Handle merge conflicts:...
 
+$ git branch feature/lastname
+$ git branch feature/middlename
+
+$ git checkout feature/lastname
+
+$ git commit -m "Lastname added, branch:feature/lastname"
+[feature/lastname 19e04a9] Lastname added, branch:feature/lastname
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git checkout master
+
+$ git merge feature/lastname
+Updating 30c95ea..19e04a9
+Fast-forward
+ readme.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git branch -d feature/lastname
+Deleted branch feature/lastname (was 19e04a9).
+
+$ git checkout feature/middlename
+Switched to branch 'feature/middlename'
+
+$ git commit -m "Middlename added, branch:feature/middlename"
+[feature/middlename a15c267] Middlename added, branch:feature/middlename
+ 1 file changed, 1 insertion(+), 1 deletion(-)
  
+$ git checkout master
+Switched to branch 'master'
+
+$ git branch
+  feature/middlename
+* master
+
+$ git merge feature/middlename
+Auto-merging readme.txt
+CONFLICT (content): Merge conflict in readme.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git status
+On branch master
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   readme.txt
+
+		
+$ git commit -m "Merge branch feature/middlename"
+[master fc7c9a1] Merge branch feature/middlename
+
+$ git branch -d feature/middlename
+Deleted branch feature/middlename (was a15c267).
+
+$ git log --pretty=oneline
+fc7c9a167cc91c0cf234243710656d69427863f0 (HEAD -> master) Merge branch feature/middlename
+a15c267979cdfe126a5bcb02c24fcfa8bdba3964 Middlename added, branch:feature/middlename
+19e04a9d59cf5e8f851788b40c8f6a3d5a9a27ef Lastname added, branch:feature/lastname
+30c95ea40429d4e7e3360863e4909a30e333f20c Handle merge conflicts start..
+dbdee21a3ea5391019c607e40c5b62bcf0152c0e Twitter handle added
+5b15f53a16451287bb7a313170f1f87e952cbb63 Abschnitt 5 start.
+d084cf05999515df5ffea4d74ba6f3730f3936bd .gitignore file added
+02ab4ea2ae503049367c8f7df4b57d6caed597b8 git history.. command
+1a33eea5042f18f1a085421ebce4fa24fc6ff02b Autor added to readme
+dfb342d0c5636b753c621c6890b6826577101e42 readme file created
+
+$ git log --pretty=oneline --graph
+*   fc7c9a167cc91c0cf234243710656d69427863f0 (HEAD -> master) Merge branch feature/middlename
+|\
+| * a15c267979cdfe126a5bcb02c24fcfa8bdba3964 Middlename added, branch:feature/middlename
+* | 19e04a9d59cf5e8f851788b40c8f6a3d5a9a27ef Lastname added, branch:feature/lastname
+|/
+* 30c95ea40429d4e7e3360863e4909a30e333f20c Handle merge conflicts start..
+* dbdee21a3ea5391019c607e40c5b62bcf0152c0e Twitter handle added
+* 5b15f53a16451287bb7a313170f1f87e952cbb63 Abschnitt 5 start.
+* d084cf05999515df5ffea4d74ba6f3730f3936bd .gitignore file added
+* 02ab4ea2ae503049367c8f7df4b57d6caed597b8 git history.. command
+* 1a33eea5042f18f1a085421ebce4fa24fc6ff02b Autor added to readme
+* dfb342d0c5636b753c621c6890b6826577101e42 readme file created 
+
+A6---------------------------------- Pushing to remote repository
+
+Cheat Sheet - Git Commands Used in This Section
+
+In this section, you learned how to push your code to a remote repository on GitHub.
+You used the following Git commands
+
+Add the remote repository https://repositoryURL under the name origin to your local repository:
+
+git remote add origin https://repositoryURL
+
+Push the first time to the main branch of the remote repository and set it as upstream:
+
+git push -u origin main
+
+Push the next commits to the remote repository:
+
+git push
+
+Clone a remote repository with the URL https://repositoryURL into a local repository on your machine:
+
+git clone https://repositoryURL
+
+Clone a remote repository into the current directory (Note the separate dot at the end that indicates the current directory):
+
+git clone https://repositoryURL .
+
+Fetch changes from the remote repository without merging them into your local branch:
+
+git fetch
+
+Now you know how to push your code to a remote repository on GitHub, how to clone a remote repository, and how to pull changes from the remote repository into your local repository.
+
+In the next section, you will learn how to create so-called pull requests. But before that, let's test your knowledge with some learning questions.
+
+
+----
+

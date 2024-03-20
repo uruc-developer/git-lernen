@@ -246,5 +246,59 @@ Now you know how to branch and merge your code, which can be helpful when you wa
 In the next section, you will learn how to push your code to a remote repository on GitHub. But before that, let's test your knowledge with some learning questions.
 
 ---
+$ git branch feature/AddTwitterHandle
 
 
+$ git branch
+  feature/AddTwitterHandle
+* master
+
+$ git checkout feature/AddTwitterHandle
+Switched to branch 'feature/AddTwitterHandle'
+
+$ git branch
+* feature/AddTwitterHandle
+  master
+  
+$ git commit -m "Twitter handle added"
+[feature/AddTwitterHandle dbdee21] Twitter handle added
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+$ git log --pretty=oneline
+dbdee21a3ea5391019c607e40c5b62bcf0152c0e (HEAD -> feature/AddTwitterHandle) Twitter handle added
+5b15f53a16451287bb7a313170f1f87e952cbb63 (master) Abschnitt 5 start.
+d084cf05999515df5ffea4d74ba6f3730f3936bd .gitignore file added
+02ab4ea2ae503049367c8f7df4b57d6caed597b8 git history.. command
+1a33eea5042f18f1a085421ebce4fa24fc6ff02b Autor added to readme
+dfb342d0c5636b753c621c6890b6826577101e42 readme file created
+
+$ git checkout master
+Switched to branch 'master'
+
+$ git branch
+  feature/AddTwitterHandle
+* master
+
+$ git merge feature/AddTwitterHandle
+Updating 5b15f53..dbdee21
+Fast-forward
+ readme.txt | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-) 
+ 
+$ git status
+On branch master
+nothing to commit, working tree clean
+ 
+$ git branch
+  feature/AddTwitterHandle
+* master
+
+$ git branch -d feature/AddTwitterHandle
+Deleted branch feature/AddTwitterHandle (was dbdee21).
+
+$ git branch
+* master
+
+Handle merge conflicts:...
+
+ 

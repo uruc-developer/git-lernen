@@ -1,0 +1,47 @@
+A3----------------------------------
+
+Cheat Sheet - Git Commands Used in This Section
+
+In this section, you installed and configured Git on your machine. To configure Git, you learned about different commands.
+You used the following Git commands
+
+Show the version of your Git installation:
+
+git -v
+
+Show the configurations:
+
+git config -l
+
+Configure your username and email:
+
+git config --global user.name "uruc-developer@hpmini"
+
+git config --global user.email "urucs.dev@outlook.de"
+
+The username and email is used by Git for every commit that you will create. Without this configuration, you are not able to commit to a repository.
+
+To show the origin of the configurations, you learned about the --show-origin parameter. It shows you in which file a configuration is located:
+
+git config -l --show-origin
+
+This command above allows you to find the .gitconfig file that is in your user directory. That .gitconfig file contains now the username and the email that you configured.
+
+Now, Git is set up and configured. This means you're ready for some work! :-)
+
+In the next section, you will learn how to work with local repositories. But before that, let's test your knowledge with some learning questions.
+
+
+A4---------------------------------- Working with local repositories 
+explorer .
+
+git init
+
+Three main areas: Working directory,rRepository and staging area
+
+git status
+git add readme.txt
+git add .
+
+ 
+ 

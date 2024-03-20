@@ -146,6 +146,105 @@ Switched to branch 'master'
 Ignore Files in the working tree:
 .gitignore file
 
-  
+https://github.com/github/gitignore
 
   
+
+Cheat Sheet - Git Commands Used in This Section
+
+In this section, you created and worked with a local repository.
+You used the following Git commands
+
+Initialize an empty Git repository:
+
+git init
+
+Show the status of your repository:
+
+git status
+
+Stage a specific file:
+
+git add readme.txt
+
+Stage all changed files:
+
+git add .
+
+Commit the staged files:
+
+git commit -m "Create readme file"
+
+Define notepad as an editor. It will be used when you run the git commit command without -m parameter:
+
+git config --global core.editor notepad
+
+Show the changes of a specific file:
+
+git diff readme.txt
+
+Show the changes in your working directory:
+
+git diff
+
+Show the changes in your staging area:
+
+git diff --staged
+
+Show the history/log:
+
+git log
+
+Show the history/log with one commit per line:
+
+git log --pretty=oneline
+
+Checkout a specific commit by its snapshot hash:
+
+git checkout b346471
+
+Navigate back to your main branch:
+
+git checkout main
+
+Now you know how to work with a local repository.
+
+In the next section, you will learn how to branch and merge your code. This can be helpful when you want to work on different features in parallel. But before that, let's test your knowledge with some learning questions.  
+
+A5---------------------------------- Branching and merging code
+Cheat Sheet - Git Commands Used in This Section
+
+In this section, you learned how to branch and merge your code.
+You used the following Git commands
+
+List the local branches:
+
+git branch
+
+Create a new branch with the name "feature/AddTwitterHandle":
+
+git branch feature/AddTwitterHandle
+
+Checkout the new branch:
+
+git checkout feature/AddTwitterHandle
+
+Checkout the main branch:
+
+git checkout main
+
+Merge changes from the feature branch into the main branch. This command assumes that you have the main branch checked out:
+
+git merge feature/AddTwitterHandle
+
+Show a graph when showing the history:
+
+git log --pretty=oneline --graph
+
+Now you know how to branch and merge your code, which can be helpful when you want to work on different features in parallel.
+
+In the next section, you will learn how to push your code to a remote repository on GitHub. But before that, let's test your knowledge with some learning questions.
+
+---
+
+

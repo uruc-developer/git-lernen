@@ -116,7 +116,28 @@ index b2ab209..35ba64d 100644
 Default Editor for git
 $ git config --global core.editor notepad
 
+$ git config -l
 
+Commit = Snapshot wit hash value 40 charecter ID..
 
+Look at the history
 
+$ git log
+commit 1a33eea5042f18f1a085421ebce4fa24fc6ff02b (HEAD -> master)
+Author: uruc-developer@hpmini <urucs.dev@outlook.de>
+Date:   Wed Mar 20 10:14:37 2024 +0100
+
+    Autor added to readme
+
+commit dfb342d0c5636b753c621c6890b6826577101e42
+Author: uruc-developer@hpmini <urucs.dev@outlook.de>
+Date:   Wed Mar 20 09:52:27 2024 +0100
+
+    readme file created
+	
+$ git log --pretty=oneline
+1a33eea5042f18f1a085421ebce4fa24fc6ff02b (HEAD -> master) Autor added to readme
+dfb342d0c5636b753c621c6890b6826577101e42 readme file created
+
+	
   

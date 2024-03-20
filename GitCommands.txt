@@ -139,5 +139,13 @@ $ git log --pretty=oneline
 1a33eea5042f18f1a085421ebce4fa24fc6ff02b (HEAD -> master) Autor added to readme
 dfb342d0c5636b753c621c6890b6826577101e42 readme file created
 
-	
+git checkout master
+Previous HEAD position was dfb342d readme file created
+Switched to branch 'master'	
+  
+Ignore Files in the working tree:
+.gitignore file
+
+  
+
   
